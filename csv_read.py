@@ -4,7 +4,7 @@ import pandas as pd
 def main():
     desktop = Path.home() / "Desktop"
     input_path = desktop / "matkg.csv"
-    output_path = desktop / "matkg_chm_dsc_80k.csv"
+    output_path = desktop / "matkg_extract_80k.csv"
 
     print(f"Reading input from: {input_path}")
 
@@ -18,15 +18,15 @@ def main():
         raise ValueError(f"Missing expected columns: {missing}")
 
     # Filter to CHM-DSC relations
-    df_chm_dsc = df[df["Rel"] == "CHM-DSC"]
-    print(f"Total CHM-DSC rows found: {len(df_chm_dsc)}")
+    df_filters = df[df["Rel"] == "CHM-DSC" or "CHM-CHM"]
+    print(f"Total CHM-DSC rows found: {len(df_filters)}")
 
     # Take first 80,000
-    df_chm_dsc_80k = df_chm_dsc.head(80000)
-    print(f"Saving {len(df_chm_dsc_80k)} rows to: {output_path}")
+    df_extract_80k = df_extract_80k.head(80000)
+    print(f"Saving {len(df_extract_80k)} rows to: {output_path}")
 
     # Keep just the core columns
-    df_chm_dsc_80k[["Subject", "Object", "Rel", "Count"]].to_csv(
+    df_extract_80k[["Subject", "Object", "Rel", "Count"]].to_csv(
         output_path, index=False
     )
 
