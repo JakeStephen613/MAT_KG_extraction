@@ -2,7 +2,7 @@ from pathlib import Path
 import pandas as pd
 
 def main():
-    desktop = Path.home() / "Desktop"
+    desktop = Path.home() / "Desktop/RESEARCH"
     input_path = desktop / "matkg.csv"
     output_path = desktop / "matkg_chm_dsc_80k.csv"
 
