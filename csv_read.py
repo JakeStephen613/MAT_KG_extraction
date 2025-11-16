@@ -17,15 +17,15 @@ def main():
     if missing:
         raise ValueError(f"Missing expected columns: {missing}")
 
-    # Filter to CHM-DSC relations
-    df_filters = df[df["Rel"] == "CHM-DSC" or "CHM-CHM"]
-    print(f"Total CHM-DSC rows found: {len(df_filters)}")
+    # Filter to CHM-DSC OR CHM-CHM
+    df_filters = df[(df["Rel"] == "CHM-DSC") | (df["Rel"] == "CHM-CHM")]
+    print(f"Total CHM-DSC + CHM-CHM rows found: {len(df_filters)}")
 
-    # Take first 80,000
-    df_extract_80k = df_extract_80k.head(80000)
+    # Take first 80,000 rows
+    df_extract_80k = df_filters.head(80000)
     print(f"Saving {len(df_extract_80k)} rows to: {output_path}")
 
-    # Keep just the core columns
+    # Save selected columns
     df_extract_80k[["Subject", "Object", "Rel", "Count"]].to_csv(
         output_path, index=False
     )
