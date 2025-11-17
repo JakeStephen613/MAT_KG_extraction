@@ -10,7 +10,7 @@ import pandas as pd
 def main():
     # Build paths to Desktop and input/output CSVs
     desktop = Path.home() / "Desktop"
-    input_path = desktop / "matkg.csv"
+    input_path = desktop / "full_kg.csv"
     output_path = desktop / "matkg_extract_80k.csv"
 
     # Log which file we're reading
