@@ -4,6 +4,11 @@ import random
 from collections import defaultdict
 
 
+## improvements I need to add: 
+## 1) it should understand that when building the random walks, to substitute CHM-CHM with a better description of the relationship. 
+## 2) change the criteria for how many of each walk 
+## 3) prioritize walks with higher counts? 
+
 def load_graph(csv_path):
     df = pd.read_csv(csv_path)
     graph = defaultdict(list)
