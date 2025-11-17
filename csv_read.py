@@ -1,6 +1,11 @@
 from pathlib import Path
 import pandas as pd
 
+
+## points to improve: 
+## 1) figure out the most relevant topics and relatinoships for KG extraction
+## 2) ....
+
 # Main entry point: extract a filtered subset of triples from matkg.csv
 def main():
     # Build paths to Desktop and input/output CSVs
