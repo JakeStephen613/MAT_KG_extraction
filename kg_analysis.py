@@ -6,7 +6,7 @@ import pandas as pd
 # Load the full KG CSV and sanity check columns
 def load_kg():
     desktop = Path.home() / "Desktop"
-    input_path = desktop / "matkg.csv"
+    input_path = desktop / "full_kg.csv"
     print(f"Reading KG from: {input_path}")
 
     df = pd.read_csv(input_path)
