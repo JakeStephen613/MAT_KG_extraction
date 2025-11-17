@@ -9,6 +9,8 @@ from pathlib import Path
 ## 2) change the criteria for how many of each walk 
 ## 3) prioritize walks with higher counts? 
 ## 4) need to ensure no repeats
+## We can require: At least 2 distinct relation types No more than N CHM-CHM in a row
+
 
 
 def load_graph(csv_path):
